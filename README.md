@@ -8,19 +8,19 @@ Compatible with **Flarum 1.8**. Requires **flarum/tags**.
 
 Homepage:
 
-![Homepage](docs/homepage.png)
+![Homepage](docs/xf-homepage.png)
 
 Tags / forums:
 
-![Forums](docs/forums.png)
+![Forums](docs/xf-forums.png)
 
 Profile:
 
-![Profile](docs/profile.png)
+![Profile](docs/xf-profile.png)
 
 Discussion:
 
-![Discussion](docs/discussion.png)
+![Discussion](docs/xf-discussion.png)
 
 ## What it does
 
