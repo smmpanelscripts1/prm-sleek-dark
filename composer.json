@@ -1,0 +1,27 @@
+{
+    "name": "prm/sleek-dark",
+    "description": "XenForo SLEEK-DARK iskelet teması.",
+    "type": "flarum-extension",
+    "version": "0.1.0",
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^1.8",
+        "flarum/tags": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Prm\\SleekDark\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Sleek Dark XF",
+            "category": "theme",
+            "icon": {
+                "name": "fas fa-moon",
+                "backgroundColor": "#121212",
+                "color": "#277ceb"
+            }
+        }
+    }
+}

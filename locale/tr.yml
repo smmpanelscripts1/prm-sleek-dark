@@ -1,0 +1,39 @@
+prm-sleek-dark:
+  forum:
+    staff_moderator: Moderatör
+    staff_admin: Admin
+    nav_forums: Forumlar
+    nav_whats_new: Yeniler
+    nav_members: Üyeler
+    sub_new_posts: Yeni gönderiler
+    sub_find_threads: Tartışmaları bul
+    sub_watched: Takip edilenler
+    sub_search: Forumlarda ara
+    sub_mark_read: Okundu işaretle
+    post_thread: Konu aç
+    new_posts: Yeni gönderiler
+    trending: Öne çıkan içerik
+    staff_online: Yetkililer çevrimiçi
+    members_online: Üyeler çevrimiçi
+    online_counts: "Toplam {members} üye, {guests} ziyaretçi"
+    statistics: Forum istatistikleri
+    stat_threads: Konular
+    stat_messages: Mesajlar
+    stat_members: Üyeler
+    stat_latest: Son üye
+    share: Bu sayfayı paylaş
+    threads: Konular
+    messages: Mesajlar
+    last_post: Son mesaj
+    none: Yok
+    replies: Yanıtlar
+    no_forums: Kategori eklemek için Admin → Etiketler’den üst ve alt etiket oluştur.
+    profile_staff: Yetkili
+    profile_joined: Katılım
+    profile_last_seen: Son görülme
+    profile_online: Çevrimiçi
+    profile_viewing: "{username} profili görüntüleniyor"
+    profile_messages: Mesajlar
+    profile_threads: Konular
+    thread_starter: Konuyu açan
+    thread_start_date: Başlangıç

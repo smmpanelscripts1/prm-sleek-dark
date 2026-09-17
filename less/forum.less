@@ -1,0 +1,1238 @@
+:root {
+  --xf-bg: #191919;
+  --xf-panel: #2d2d2d;
+  --xf-header-bar: #2d2d2d;
+  --xf-row: #2d2d2d;
+  --xf-row-hover: #333333;
+  --xf-line: #464646;
+  --xf-subnav: #3c3c3c;
+  --xf-text: #dedede;
+  --xf-muted: #dedede;
+  --xf-dim: #b8b8b8;
+  --xf-blue: #73a5c0;
+  --xf-staff: #2c7bd0;
+  --xf-btn: #464646;
+  --xf-btn-hover: #535353;
+  --xf-width: 64%;
+
+  --primary-color: var(--xf-blue);
+  --secondary-color: #2d2d2d;
+  --body-bg: var(--xf-bg);
+  --body-bg-shaded: #161616;
+  --body-bg-light: #2d2d2d;
+  --body-bg-faded: fade(#191919, 93%);
+  --text-color: var(--xf-text);
+  --link-color: var(--xf-blue);
+  --heading-color: var(--xf-text);
+  --muted-color: var(--xf-muted);
+  --muted-color-light: #eee;
+  --muted-color-dark: #9a9a9a;
+  --muted-more-color: #9a9a9a;
+  --control-bg: #2d2d2d;
+  --control-bg-light: #3c3c3c;
+  --control-bg-shaded: #191919;
+  --control-color: #dedede;
+  --header-bg: #191919;
+  --header-color: #dedede;
+  --header-control-bg: #2d2d2d;
+  --header-control-color: #dedede;
+  --hero-bg: transparent;
+  --hero-color: #dedede;
+  --overlay-bg: fade(#000, 70%);
+  --shadow-color: fade(#000, 40%);
+  --usercard-bg: #2d2d2d;
+  --discussion-title-color: #73a5c0;
+  --discussion-list-item-bg-hover: #333333;
+  --header-height: 64px;
+  --xf-staff-h: 0px;
+  --xf-subnav-h: 34px;
+}
+
+html.sleek-has-staff {
+  --xf-staff-h: 22px;
+}
+
+body,
+.App,
+#app {
+  background: var(--xf-bg);
+  color: var(--xf-text);
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+a {
+  color: var(--xf-blue);
+}
+
+a:hover {
+  color: #9dc4d8;
+}
+
+.App {
+  padding-top: ~"calc(var(--xf-staff-h) + var(--header-height) + var(--xf-subnav-h))" !important;
+}
+
+.App-header,
+.App-drawer {
+  background: var(--xf-bg) !important;
+  box-shadow: none !important;
+  border-bottom: 0 !important;
+  overflow: visible !important;
+}
+
+.App-header {
+  z-index: ~"calc(var(--zindex-header) + 2)" !important;
+}
+
+.Header-secondary .Dropdown-menu {
+  z-index: ~"calc(var(--zindex-header) + 3)";
+}
+
+@media @tablet-up {
+  .sleek-dark .App-header {
+    position: fixed !important;
+    top: var(--xf-staff-h) !important;
+    height: var(--header-height) !important;
+    padding: 12px 0 !important;
+  }
+}
+
+.App-header .container,
+.XfStaffBar .container,
+.XfSubNav .container,
+.App-content .container {
+  width: var(--xf-width) !important;
+  max-width: var(--xf-width) !important;
+  box-sizing: border-box;
+}
+
+.XfStaffBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1010;
+  background: var(--xf-staff);
+  color: #fff;
+  font-size: 11px;
+  height: var(--xf-staff-h);
+  line-height: var(--xf-staff-h);
+
+  .container {
+    display: flex;
+    gap: 18px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  a {
+    color: #fff;
+    font-weight: 400;
+  }
+}
+
+.Header-title {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 22px 0 0;
+  line-height: 34px;
+
+  a {
+    color: #fff !important;
+    text-decoration: none;
+  }
+}
+
+.Header-primary {
+  .Header-controls > li {
+    margin-right: 16px;
+  }
+
+  a,
+  .LinksButton {
+    font-weight: 400;
+    font-size: 13px;
+    color: #fff !important;
+    padding: 0;
+  }
+}
+
+.Header-secondary {
+  .Search {
+    margin-right: 4px;
+  }
+
+  .Search-input input {
+    width: 150px;
+    height: 32px;
+    background: #2d2d2d;
+    border: 0;
+    border-radius: 16px;
+    color: #dedede;
+    font-size: 12px;
+  }
+
+  .item-session .Button,
+  .item-notifications .Button {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+}
+
+.XfSubNav {
+  position: fixed;
+  top: ~"calc(var(--xf-staff-h) + var(--header-height))";
+  left: 0;
+  right: 0;
+  z-index: var(--zindex-header);
+  overflow: visible;
+  background: var(--xf-subnav);
+  border-bottom: 0;
+  font-size: 13px;
+  height: var(--xf-subnav-h);
+
+  .container {
+    margin: 0 auto;
+    padding: 8px 15px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  a {
+    color: var(--xf-blue);
+    font-weight: 400;
+  }
+
+  a:hover,
+  a.active {
+    color: #9dc4d8;
+  }
+}
+
+.App-content {
+  padding-top: 18px;
+}
+
+.Hero:not(.UserHero):not(.HeroImage),
+.WelcomeHero:not(.HeroImage) {
+  display: none !important;
+}
+
+.XfPageHead {
+  display: none !important;
+}
+
+.XfPageTitle {
+  margin: 0 0 16px;
+  padding: 0;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+
+  h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--xf-text);
+  }
+}
+
+@media @tablet-up {
+  .IndexPage .container,
+  .TagsPage .container {
+    display: block;
+    padding-right: 0;
+  }
+
+  .IndexPage .sideNavContainer,
+  .TagsPage .sideNavContainer,
+  .TagsPage .container {
+    display: grid !important;
+    grid-template-columns: ~"minmax(0, 1fr) 280px";
+    gap: 20px;
+    align-items: start;
+    box-sizing: border-box;
+  }
+
+  .IndexPage-nav,
+  .TagsPage-nav,
+  .sideNav:not(.UserPage-nav),
+  .sideNav--horizontal:not(.UserPage-nav) {
+    order: 2;
+    width: 100% !important;
+    max-width: 100% !important;
+    float: none !important;
+    position: static !important;
+    margin: 0 !important;
+    flex-shrink: 0;
+    overflow: hidden !important;
+    white-space: normal;
+
+    > ul {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0;
+    }
+  }
+
+  .IndexPage-results,
+  .TagsPage-content,
+  .sideNavOffset {
+    order: 1;
+    margin: 0 !important;
+    width: auto !important;
+    min-width: 0;
+  }
+}
+
+.IndexPage-nav,
+.TagsPage-nav,
+.sideNav:not(.UserPage-nav) {
+  .item-nav,
+  .item-separator,
+  .item-tags,
+  [class*="item-tag"] {
+    display: none;
+  }
+
+  > ul,
+  > ul > li,
+  .item-xf-widgets {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+.XfSidebar,
+.XfSidebar-actions {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+.XfSidebar-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 8px;
+  margin: 0 0 16px;
+
+  .Button,
+  .Button--primary {
+    background: var(--xf-btn) !important;
+    color: #fff !important;
+    border: 1px solid #393939;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 400;
+    white-space: nowrap;
+    box-shadow: none !important;
+  }
+
+  .Button:hover {
+    background: var(--xf-btn-hover) !important;
+  }
+
+  .Button-label {
+    display: inline !important;
+  }
+
+  .Button-icon {
+    margin-right: 6px;
+  }
+}
+
+.XfSidebar {
+  width: 100%;
+
+  .XfBlock {
+    background: var(--xf-panel);
+    padding: 10px 12px 12px;
+    margin-bottom: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.XfBlock {
+  margin-bottom: 22px;
+
+  &-title {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--xf-blue);
+    margin: 0 0 8px;
+  }
+
+  &-body {
+    font-size: 13px;
+    color: var(--xf-muted);
+    line-height: 1.45;
+  }
+
+  a {
+    color: var(--xf-blue);
+  }
+
+  a:hover {
+    color: #9dc4d8;
+  }
+}
+
+.XfPerson {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.XfPerson .Avatar {
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+}
+
+.XfTrend {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.XfTrend .Avatar {
+  width: 22px;
+  height: 22px;
+  font-size: 10px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.XfTrend-meta {
+  font-size: 11px;
+  color: var(--xf-dim);
+  margin-top: 2px;
+}
+
+.XfBlock-muted {
+  margin-top: 6px;
+  color: var(--xf-dim);
+  font-size: 12px;
+  border-top: 1px solid var(--xf-line);
+  padding-top: 6px;
+}
+
+.XfBlock-stat {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 2px 0;
+  font-size: 13px;
+  color: var(--xf-muted);
+}
+
+.XfBlock-stat strong {
+  color: var(--xf-text);
+  font-weight: 400;
+}
+
+.XfShare {
+  display: flex;
+  gap: 14px;
+  font-size: 15px;
+  margin-top: 4px;
+  color: #cfcfcf;
+}
+
+.XfShare a {
+  color: #cfcfcf;
+}
+
+.XfNodeGroup {
+  background: var(--xf-panel);
+  margin-bottom: 18px;
+}
+
+.XfNodeGroup-header {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--xf-blue);
+  padding: 6px 10px;
+  background: var(--xf-header-bar);
+}
+
+.XfNode {
+  display: grid;
+  grid-template-columns: ~"40px minmax(0, 1fr) 70px 70px minmax(140px, 1fr)";
+  gap: 16px;
+  align-items: center;
+  padding: 11px 14px;
+  border-top: 1px solid var(--xf-line);
+  background: var(--xf-row);
+  color: var(--xf-dim);
+}
+
+.XfNode:hover {
+  background: var(--xf-row-hover);
+}
+
+.XfNode-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--xf-dim);
+  font-size: 20px;
+}
+
+.XfNode-main a {
+  color: var(--xf-blue);
+  font-weight: 400;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.XfNode-main p {
+  margin: 3px 0 0;
+  font-size: 12px;
+  color: var(--xf-dim);
+}
+
+.XfNode-stat {
+  font-size: 11px;
+  text-align: right;
+  color: var(--xf-dim);
+  line-height: 1.25;
+}
+
+.XfNode-stat span {
+  display: block;
+}
+
+.XfNode-stat strong {
+  display: block;
+  color: var(--xf-text);
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.XfNode-last {
+  font-size: 12px;
+  color: var(--xf-dim);
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 8px;
+}
+
+.XfNode-last .Avatar {
+  width: 22px;
+  height: 22px;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.XfNode-last a {
+  color: var(--xf-blue);
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.XfNode-last-meta {
+  color: var(--xf-dim);
+  font-size: 11px;
+}
+
+.XfEmpty {
+  color: #888;
+  padding: 16px 0;
+}
+
+.DiscussionList-discussions {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.DiscussionListItem {
+  background: var(--xf-row) !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  border-top: 1px solid var(--xf-line);
+}
+
+.DiscussionListItem-content {
+  padding: 12px 80px 12px 60px;
+}
+
+.DiscussionListItem:hover {
+  background: var(--xf-row-hover) !important;
+}
+
+.DiscussionListItem-title {
+  color: var(--xf-blue) !important;
+  font-weight: 400;
+}
+
+.Post,
+.CommentPost {
+  background: transparent;
+}
+
+.Post-header,
+.Post-header a {
+  color: var(--xf-muted);
+}
+
+.Button {
+  background: var(--xf-btn);
+  color: #fff;
+  border: 1px solid #393939;
+}
+
+.Button--primary {
+  background: var(--xf-btn-hover) !important;
+  color: #fff !important;
+}
+
+.FormControl {
+  background: #1c1c1c;
+  color: #fff;
+  border-color: #2a2a2a;
+}
+
+.Dropdown-menu {
+  background: #161616;
+  color: #fff;
+}
+
+.App-composer .Composer {
+  background: #161616;
+}
+
+@media @desktop-up {
+  .sideNav:not(.UserPage-nav),
+  .sideNav:not(.UserPage-nav) > ul,
+  .TagsPage-nav,
+  .TagsPage-nav > ul,
+  .IndexPage-nav,
+  .IndexPage-nav > ul {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: 0 !important;
+    overflow: hidden !important;
+  }
+}
+
+.XfUserPage {
+  .container {
+    padding-right: 0;
+  }
+}
+
+.XfUser-crumb {
+  font-size: 13px;
+  color: var(--xf-blue);
+  margin: 0 0 14px;
+
+  a {
+    color: var(--xf-blue);
+  }
+
+  span {
+    color: var(--xf-dim);
+  }
+}
+
+.UserCard.UserHero,
+.XfUserCard {
+  display: block !important;
+  background: transparent !important;
+  color: var(--xf-text);
+  overflow: visible;
+  box-shadow: none;
+  text-align: left;
+}
+
+.XfUserCard .UserCard-badges {
+  display: none !important;
+}
+
+.XfUserCard-main .UserCard-ranks,
+.XfUserCard-main .RankBanners {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 10px;
+}
+
+.XfUserCard-banner {
+  display: flex;
+  flex-direction: column;
+  min-height: 210px;
+  overflow: visible;
+  background-color: #6b8490;
+  background-image:
+    linear-gradient(180deg, rgba(12, 16, 20, 0.08) 0%, rgba(12, 16, 20, 0.42) 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 240' preserveAspectRatio='xMidYMid slice'><rect fill='%2389a4b4' width='1200' height='240'/><path fill='%2393ad82' d='M0 132L200 78l190 44 220-60 210 50 180-42 200 40v130H0z'/><path fill='%2368875c' d='M0 164l180-34 240 28 210-44 260 36 310-30v120H0z'/><path fill='%23485a46' d='M0 196l150-18 300 14 260-24 490 16v68H0z'/></svg>");
+  background-size: cover;
+  background-position: center;
+}
+
+.XfUserCard-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  padding: 22px 22px 8px;
+  margin: 0;
+  min-width: 0;
+}
+
+.XfUserCard-avatar {
+  flex: 0 0 148px;
+  width: 148px;
+  height: 148px;
+  margin: 0 !important;
+  float: none !important;
+  position: relative;
+  overflow: visible;
+}
+
+.XfUserCard-editor,
+.XfUserCard-avatar .AvatarEditor {
+  width: 148px !important;
+  height: 148px !important;
+  margin: 0 !important;
+  float: none !important;
+  position: relative !important;
+  overflow: visible !important;
+  border-radius: 0;
+}
+
+.XfUserCard-avatar .Avatar {
+  width: 148px;
+  height: 148px;
+  line-height: 148px;
+  font-size: 52px;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: none;
+  background: #2b2b2b;
+  color: #dedede;
+  overflow: hidden;
+}
+
+.XfUserCard-avatar .Dropdown-toggle {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 148px !important;
+  height: 148px !important;
+  margin: 0 !important;
+  line-height: 148px;
+  border-radius: 50%;
+  opacity: 0 !important;
+}
+
+.XfUserCard-avatar .AvatarEditor:hover .Dropdown-toggle,
+.XfUserCard-avatar .AvatarEditor.open .Dropdown-toggle {
+  opacity: 1 !important;
+}
+
+.XfUserCard-avatar .Dropdown-menu {
+  position: absolute !important;
+  top: ~"calc(100% + 8px)";
+  left: 0;
+  right: auto !important;
+  z-index: 40;
+  width: 180px !important;
+  min-width: 180px;
+  max-width: 180px;
+  overflow: visible;
+  background: #161616;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+.XfUserCard-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-top: 4px;
+}
+
+.XfUserCard .UserCard-identity {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.XfUserCard-dates {
+  color: #d5d5d5;
+  font-size: 13px;
+  line-height: 1.65;
+
+  > div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.XfUserCard-controls,
+.XfUserCard .UserCard-controls {
+  flex: 0 0 auto;
+  float: none !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 2px 0 0 !important;
+  overflow: visible !important;
+
+  .Dropdown-menu {
+    position: absolute !important;
+    top: 100%;
+    right: 0;
+    left: auto !important;
+    z-index: 30;
+  }
+}
+
+.XfUserCard-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin: 6px 0 0;
+  padding: 12px 22px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.XfUserCard-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: #d0d0d0;
+  font-size: 13px;
+  line-height: 1.3;
+
+  strong {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+  }
+}
+
+.XfUserCard-stat--end {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.XfUser-tabs {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  float: none !important;
+  background: var(--xf-bg);
+  border-bottom: 1px solid #2a2a2a;
+
+  > ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 12px 6px 0;
+    list-style: none;
+    overflow: visible !important;
+  }
+
+  > ul > li {
+    width: auto !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  .item-separator {
+    display: none;
+  }
+
+  .Button,
+  a {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    border-bottom: 2px solid transparent !important;
+    border-radius: 0 !important;
+    color: var(--xf-blue) !important;
+    padding: 8px 0 10px !important;
+    font-weight: 400;
+  }
+
+  .active > .Button,
+  .active > a,
+  li.active a {
+    color: #fff !important;
+    border-bottom-color: var(--xf-blue) !important;
+  }
+
+  .Button-icon,
+  .Button-badge {
+    display: none;
+  }
+}
+
+.XfUser-content {
+  margin: 16px 0 0 !important;
+  width: auto !important;
+  background: var(--xf-panel);
+  padding: 18px 22px;
+  overflow: hidden;
+  color: var(--xf-dim);
+  min-height: 56px;
+  box-sizing: border-box;
+}
+
+.XfUser-content .DiscussionListItem:first-child {
+  border-top: 0;
+}
+
+.XfUser-content .Placeholder {
+  color: var(--xf-dim);
+  background: transparent;
+  padding: 8px 0;
+}
+
+.UserCard--popover {
+  .XfUserCard-banner,
+  .XfUserCard-stats {
+    display: none;
+  }
+}
+
+@media @phone {
+  .XfUserCard-body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+  }
+
+  .XfUserCard-avatar,
+  .XfUserCard-editor,
+  .XfUserCard-avatar .AvatarEditor,
+  .XfUserCard-avatar .Avatar {
+    width: 112px !important;
+    height: 112px !important;
+    flex-basis: 112px;
+    line-height: 112px;
+    font-size: 36px;
+  }
+
+  .XfUserCard-dates > div {
+    white-space: normal;
+  }
+
+  .XfUserCard-stat--end {
+    text-align: left;
+    align-items: flex-start;
+  }
+}
+
+@media @phone {
+  .XfNode {
+    grid-template-columns: ~"28px minmax(0, 1fr)";
+  }
+
+  .XfNode-stat,
+  .XfNode-last {
+    display: none;
+  }
+
+  .XfStaffBar .container,
+  .XfSubNav .container,
+  .XfPageTitle {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .XfSidebar-actions {
+    justify-content: flex-start;
+  }
+}
+
+.XfThreadHead {
+  margin: 0 0 16px;
+}
+
+.XfThread-crumb {
+  font-size: 13px;
+  color: var(--xf-blue);
+  margin: 0 0 10px;
+
+  a {
+    color: var(--xf-blue);
+  }
+
+  span {
+    color: var(--xf-dim);
+  }
+}
+
+.XfThread-title {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.XfThread-meta {
+  font-size: 13px;
+  color: var(--xf-dim);
+}
+
+.App--discussion .PostStreamScrubber,
+.App--discussion .Scrubber,
+.DiscussionPage-nav .item-scrubber {
+  display: none !important;
+  height: 0 !important;
+  visibility: hidden !important;
+}
+
+@media @tablet-up {
+  .DiscussionPage-discussion > .container {
+    display: block !important;
+    grid-template-columns: none !important;
+    gap: 0 !important;
+  }
+
+  .DiscussionPage-nav {
+    display: flex;
+    justify-content: flex-end;
+    position: static !important;
+    padding: 0 0 10px !important;
+    top: auto !important;
+    height: auto !important;
+
+    > ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+    }
+
+    > ul > li {
+      margin: 0 !important;
+    }
+
+    .ButtonGroup,
+    .Button {
+      width: auto !important;
+    }
+  }
+
+  .App--discussion .CommentPost:not(.Post--hidden) {
+    display: block !important;
+    background: var(--xf-panel) !important;
+    padding: 0 !important;
+    margin: 0 0 10px !important;
+    border: 1px solid #3a3a3a;
+    border-radius: 0;
+    position: relative;
+  }
+
+  .App--discussion .CommentPost:not(.Post--hidden) > div,
+  .App--discussion .CommentPost.editing {
+    display: grid;
+    grid-template-columns: ~"200px minmax(0, 1fr)";
+    align-items: stretch;
+  }
+
+  .App--discussion .CommentPost .Post-header {
+    grid-column: 1;
+    grid-row: ~"1 / span 4";
+    width: auto;
+    margin: 0;
+    padding: 16px 12px;
+    text-align: center;
+    border-right: 1px solid #3a3a3a;
+    color: var(--xf-dim);
+
+    > ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+  }
+
+  .App--discussion .CommentPost .item-user {
+    width: 100%;
+  }
+
+  .App--discussion .CommentPost .PostUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: static;
+  }
+
+  .App--discussion .CommentPost .PostUser-name,
+  .App--discussion .CommentPost .PostUser-name a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: var(--xf-blue) !important;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .App--discussion .CommentPost .PostUser-avatar,
+  .App--discussion .CommentPost .Avatar,
+  .App--discussion .XfReplyPlaceholder .PostUser-avatar,
+  .App--discussion .XfReplyPlaceholder .Avatar {
+    position: static !important;
+    left: auto !important;
+    float: none !important;
+    width: 96px;
+    height: 96px;
+    line-height: 96px;
+    font-size: 32px;
+    margin: 0 0 4px;
+    border-radius: 50%;
+  }
+
+  .App--discussion .CommentPost .PostUser-badges {
+    display: none !important;
+  }
+
+  .App--discussion .CommentPost .PostUser-ranks,
+  .App--discussion .CommentPost .RankBanners {
+    justify-content: center;
+    margin: 4px 0 2px;
+  }
+
+  .App--discussion .XfMsg-attr {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 36px;
+    padding: 6px 14px;
+    border-bottom: 1px solid #3a3a3a;
+    color: var(--xf-dim);
+    font-size: 12px;
+  }
+
+  .App--discussion .XfMsg-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .App--discussion .XfMsg-time {
+    color: var(--xf-dim) !important;
+  }
+
+  .App--discussion .XfMsg-number {
+    color: #8d8d8d;
+    margin-left: auto;
+  }
+
+  .App--discussion .CommentPost .Post-body {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 14px 18px;
+    min-height: 90px;
+    color: var(--xf-text);
+    overflow: visible;
+  }
+
+  .App--discussion .CommentPost .Post-actions {
+    grid-column: 2;
+    grid-row: 3;
+    float: none !important;
+    opacity: 1 !important;
+    margin: 0 !important;
+    padding: 8px 14px 12px;
+    border-top: 1px solid #3a3a3a;
+  }
+
+  .App--discussion .CommentPost .Post-footer {
+    grid-column: 2;
+    grid-row: 4;
+    margin: 0;
+    padding: 0 14px 10px;
+  }
+
+  .App--discussion .XfReplyPlaceholder {
+    display: grid !important;
+    grid-template-columns: ~"200px minmax(0, 1fr)" !important;
+    grid-template-rows: 110px !important;
+    grid-auto-flow: column !important;
+    align-items: stretch;
+    width: 100% !important;
+    margin: 0 0 10px !important;
+    border: 1px solid #3a3a3a !important;
+    border-radius: 0;
+    background: var(--xf-panel) !important;
+    min-height: 110px;
+    padding: 0 !important;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .App--discussion .XfReplyPlaceholder .Post-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    padding: 16px 12px;
+    border-right: 1px solid #3a3a3a;
+    margin: 0;
+    width: auto !important;
+  }
+
+  .App--discussion .XfReply-prompt {
+    display: flex;
+    align-items: center;
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    padding: 14px 18px;
+    color: var(--xf-dim);
+    font-size: 14px;
+    width: auto !important;
+  }
+}
+
+.XfMsg-info {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: #b8b8b8;
+}
+
+.App--discussion .PostStream {
+  margin-top: 0;
+}
