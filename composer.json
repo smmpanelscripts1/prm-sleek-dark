@@ -1,0 +1,47 @@
+{
+    "name": "prm/sleek-dark",
+    "description": "Dark forum theme with forum list, profile card, and two-column discussion layout.",
+    "type": "flarum-extension",
+    "version": "2.0.0",
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^2.0.0-rc.8",
+        "flarum/tags": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Prm\\SleekDark\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Sleek Dark",
+            "category": "theme",
+            "icon": {
+                "name": "fas fa-moon",
+                "backgroundColor": "#121212",
+                "color": "#277ceb"
+            }
+        },
+        "flarum-cli": {
+            "modules": {
+                "admin": false,
+                "forum": true,
+                "js": true,
+                "jsCommon": false,
+                "css": true,
+                "locale": true,
+                "gitConf": false,
+                "githubActions": false,
+                "prettier": false,
+                "typescript": false,
+                "bundlewatch": false,
+                "backendTesting": false,
+                "editorConfig": false,
+                "styleci": false
+            }
+        }
+    },
+    "minimum-stability": "beta",
+    "prefer-stable": true
+}
